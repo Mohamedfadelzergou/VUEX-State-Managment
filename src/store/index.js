@@ -1,15 +1,38 @@
 import { createStore } from 'vuex'
 
-export default createStore({
+const categoriesModule={
+  namespaced:true,
+  state: {
+    categories:[]
+  },
+  mutations: {
+    addCategories(category){},
+    updateCategories(id,category){},
+    deleteCategories(id){},
+
+  },
+  getters:{
+    getCategories(state){
+
+    }
+  },
+  actions: {
+    persisteCaterory({commit},payloud){
+
+    }
+  },
+}
+const counterModule={
+  namespaced:true,
   state: {
     counter:1,
-    name:"mohamed fadel zergou"
+    name:"mohamed fadel zergou",
   },
   mutations: {
     increment(state,payloud){
       state.counter+=payloud.data;
-
     }
+
   },
   getters:{
     getName(state){
@@ -33,6 +56,14 @@ export default createStore({
       commit('increment',payloud)
     }
   },
+}
+export default createStore({
+  state: {},
+  mutations: {},
+  getters:{},
+  actions: {},
   modules: {
+    counter:counterModule,
+    category:categoriesModule
   }
 })

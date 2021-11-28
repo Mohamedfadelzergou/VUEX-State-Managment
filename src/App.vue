@@ -16,7 +16,7 @@ export default {
   },
   methods:{
         increment(){
-            this.$store.dispatch('increment',{data:5});
+            this.$store.dispatch('counter/increment',{data:5});
         }
     }
 }
