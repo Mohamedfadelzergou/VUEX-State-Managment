@@ -16,7 +16,7 @@ export default {
   },
   methods:{
         increment(){
-            this.$store.commit('increment',{data:3});
+            this.$store.dispatch('increment',{data:5});
         }
     }
 }

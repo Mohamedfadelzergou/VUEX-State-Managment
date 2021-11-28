@@ -1,15 +1,26 @@
 <template>
-  <h1>Vue js Vuex</h1>
-  <p>{{$store.state.counter}}</p>
-  <button @click="increment">incriment</button>
+  <h1>{{getName}}</h1>
+  <p>{{getCounterMormalise}}</p>
+  <button @click="increment({data:10})">incriment</button>
 </template>
 
 <script>
+import {mapGetters,mapActions} from 'vuex';
 export default {
+    computed:{
+        // counter(){
+        //     return this.$store.getters.getCounterMormalise;
+        // },
+        // name(){
+        //     return this.$store.getters.getName;
+        // }
+        ...mapGetters(['getName','getCounterMormalise'])
+    },
     methods:{
-        increment(){
-            this.$store.commit('increment',{data:1});
-        }
+        // increment(){
+        //     this.$store.dispatch('increment',{data:5});
+        // }
+        ...mapActions(['increment'])
     }
 }
 </script>
