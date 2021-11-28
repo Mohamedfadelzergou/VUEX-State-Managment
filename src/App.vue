@@ -3,9 +3,24 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view/>
+  <first-exemple/>
+  <hr>
+  <button @click="increment">increment</button>
 </template>
+<script>
+import FirstExemple from './components/FirstExemple.vue'
+export default {
+  components:{
+    FirstExemple
 
+  },
+  methods:{
+        increment(){
+            this.$store.commit('increment',{data:3});
+        }
+    }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
